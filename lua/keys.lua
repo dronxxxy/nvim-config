@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
 map('n', '<C-t>',
   ':split<cr>' ..
@@ -12,4 +12,4 @@ map('t', '<C-q>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 map('t', '<C-w>', '<C-q><C-w>', { desc = 'Exit terminal mode' })
 
 map('v', '>', '>gv', { desc = 'Shift right without selection cancelation' })
-map('v', '<', '<gv', { desc = 'Shift right without selection cancelation' })
+map('v', '<', '<gv', { desc = 'Shift left without selection cancelation' })
