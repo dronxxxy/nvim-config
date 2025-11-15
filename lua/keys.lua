@@ -1,4 +1,4 @@
-local map = vim.keymap.set
+local map = vim.api.nvim_set_keymap
 
 map('n', '<C-t>',
   ':split<cr>' ..
