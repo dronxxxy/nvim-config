@@ -22,5 +22,11 @@ return {
     for name, server in pairs(servers) do
       lspconfig[name].setup(server)
     end
+
+    vim.diagnostic.config({
+      virtual_text = {
+        enabled = true,
+      },
+    })
   end
 }
