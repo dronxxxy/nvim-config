@@ -1,5 +1,24 @@
 local servers = {
   ["clangd"] = { },
+  ["typst"] = { },
+  ["grammar_guard"] = {
+    settings = {
+      ltex = {
+        enabled = { "latex", "tex", "bib", "markdown" },
+        language = "en",
+        diagnosticSeverity = "information",
+        setenceCacheSize = 2000,
+        additionalRules = {
+          enablePickyRules = true,
+          motherTongue = "en",
+        },
+        trace = { server = "verbose" },
+        dictionary = {},
+        disabledRules = {},
+        hiddenFalsePositives = {},
+      },
+    },
+  }
 }
 
 return {
@@ -8,6 +27,13 @@ return {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
   },
+  keys = {
+    { "gd", vim.lsp.buf.definition, desc = "Go to LSP definition" },
+    { '<leader>la', vim.lsp.buf.code_action, desc = 'Show code actions' },
+    { '<leader>lr', vim.lsp.buf.rename, desc = 'Rename symbol' },
+    { '<leader>lh', vim.lsp.buf.hover, desc = 'Hover' }
+  },
+  lazy = false,
   config = function()
     local servers = {}
     for name, server in pairs(servers) do
