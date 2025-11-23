@@ -13,3 +13,4 @@ map('t', '<C-w>', '<C-q><C-w>', { desc = 'Exit terminal mode' })
 
 map('v', '>', '>gv', { desc = 'Shift right without selection cancelation' })
 map('v', '<', '<gv', { desc = 'Shift left without selection cancelation' })
+
