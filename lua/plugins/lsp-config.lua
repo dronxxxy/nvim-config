@@ -53,6 +53,7 @@ return {
       virtual_text = {
         enabled = true,
       },
+      update_in_insert = true,
     })
   end
 }
